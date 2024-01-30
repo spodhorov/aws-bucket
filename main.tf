@@ -2,7 +2,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name"  # Specify a globally unique bucket name
+resource "aws_instance" "example" {
+  count         = 1
+  ami           = "ami-2757f631"
+  instance_type = "t2.micro"
 }
